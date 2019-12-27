@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -41,7 +42,7 @@ public class Player : MonoBehaviour
     {
         Health -= damage;
         if (Health <= 0)
-            Destroy(gameObject);
+            SceneManager.LoadScene("Menu");
     }
 
     public void ApplyMoney(int money)
