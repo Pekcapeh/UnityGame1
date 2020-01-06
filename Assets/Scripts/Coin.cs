@@ -1,22 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public int Money = 1;
-    public int Speed = 5;
-        
-    void Update()
-    {
-        transform.Translate(Vector2.left * Speed * Time.deltaTime);
-    }
+    private int Money = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.GetComponent<Player>())
         {
-            collision.GetComponent<Player>().ApplyMoney(Money);
+            collision.GetComponent<Player>().AddMoney(Money);
             Destroy(gameObject);
         }
     }

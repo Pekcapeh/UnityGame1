@@ -1,38 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     public GameObject EnemyPrefab;
     public GameObject CoinPrefab;
-    public float StartTimeBtwStart;
 
-    private int YSpawnPosition = -4;
-    private float _timeBtwStart = 0;
+    private float _startTimeSpawn = 0.7f;
+    private int _ySpawnPosition = -4;
+    private float _timeSpawn = 0;
 
     void Update()
     {
-        Random random = new Random();
-
-        if (_timeBtwStart <= 0)
+        if (_timeSpawn <= 0)
         {
-            int rand = Random.Range(0, 10);
+            int rand = Random.Range(0, 101);
 
-            if (rand < 7)
+            if (rand < 70)
             {
-                Instantiate(CoinPrefab, new Vector2(transform.position.x, YSpawnPosition + 1), Quaternion.identity);
+                Instantiate(CoinPrefab, new Vector2(transform.position.x, _ySpawnPosition + 1), Quaternion.identity);
             }
             else
             {
-                Instantiate(EnemyPrefab, new Vector2(transform.position.x, YSpawnPosition), Quaternion.identity);
+                Instantiate(EnemyPrefab, new Vector2(transform.position.x, _ySpawnPosition), Quaternion.identity);
             }
 
-            _timeBtwStart = StartTimeBtwStart;
+            _timeSpawn = _startTimeSpawn;
         }
         else
         {
-            _timeBtwStart -= Time.deltaTime;
+            _timeSpawn -= Time.deltaTime;
         }
     }
 }

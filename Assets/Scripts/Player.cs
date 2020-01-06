@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(GroundChecker))]
@@ -11,11 +8,11 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public TMP_Text Text;
-    public int Health = 1;
-    public float SpeedRotation = 10;
-    public float JumpForce = 7;
-    public int Money = 0;
 
+    private int _health = 1;
+    private float _speedRotation = 10;
+    private float _jumpForce = 20;    
+    private int _money = 0;
     private Rigidbody2D _rigidbody;
     private GroundChecker _groundChecker;
 
@@ -27,27 +24,27 @@ public class Player : MonoBehaviour
 
     private void Update()
     {        
-        transform.Rotate(new Vector3(0, 0, -SpeedRotation) * 100 * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, -_speedRotation) * 100 * Time.deltaTime);
     }
 
     private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space) && _groundChecker.CheckGround())
         {
-            _rigidbody.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+            _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         }
     }
 
     public void ApplyDamage(int damage)
     {
-        Health -= damage;
-        if (Health <= 0)
+        _health -= damage;
+        if (_health <= 0)
             SceneManager.LoadScene("Menu");
     }
 
-    public void ApplyMoney(int money)
+    public void AddMoney(int money)
     {
-        Money += money;
-        Text.text = Money.ToString();
+        _money += money;
+        Text.text = _money.ToString();
     }
 }
