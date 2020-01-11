@@ -1642,9 +1642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329477ed35da3d044adaa91fef29946e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 5834206464872089460, guid: 3a4cd8c96517c6444a007361529a8494,
+  _enemyPrefab: {fileID: 5834206464872089460, guid: 3a4cd8c96517c6444a007361529a8494,
     type: 3}
-  CoinPrefab: {fileID: 7136793781765374297, guid: 2addc84cea2cb9545aa08206b119d6d9,
+  _coinPrefab: {fileID: 7136793781765374297, guid: 2addc84cea2cb9545aa08206b119d6d9,
     type: 3}
 --- !u!4 &2063363314
 Transform:

@@ -2,9 +2,8 @@
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
-    public GameObject CoinPrefab;
-
+    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private GameObject _coinPrefab;
     private float _startTimeSpawn = 0.7f;
     private int _ySpawnPosition = -4;
     private float _timeSpawn = 0;
@@ -17,11 +16,11 @@ public class Spawner : MonoBehaviour
 
             if (rand < 70)
             {
-                SpawnTemplate(CoinPrefab, _ySpawnPosition + 1);
+                SpawnTemplate(_coinPrefab, _ySpawnPosition + 1);
             }
             else
             {
-                SpawnTemplate(EnemyPrefab, _ySpawnPosition);
+                SpawnTemplate(_enemyPrefab, _ySpawnPosition);
             }
 
             _timeSpawn = _startTimeSpawn;
