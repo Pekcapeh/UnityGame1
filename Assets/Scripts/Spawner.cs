@@ -5,7 +5,7 @@ public class Spawner : MonoBehaviour
     public GameObject EnemyPrefab;
     public GameObject CoinPrefab;
 
-    private float _startTimeSpawn = 1f;
+    private float _startTimeSpawn = 0.7f;
     private int _ySpawnPosition = -4;
     private float _timeSpawn = 0;
 
