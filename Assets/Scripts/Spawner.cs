@@ -5,8 +5,17 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _enemyPrefab;
     [SerializeField] private GameObject _coinPrefab;
     private float _startTimeSpawn = 0.7f;
-    private int _ySpawnPosition = -4;
     private float _timeSpawn = 0;
+    private float _xSpawnPosition;
+    private float _yAirSpawnPosition;
+    private float _yGroundSpawnPosition;    
+
+    private void Start()
+    {
+        _xSpawnPosition = GetComponent<Transform>().position.x;
+        _yGroundSpawnPosition = GetComponent<Transform>().position.y;
+        _yAirSpawnPosition = _yGroundSpawnPosition + 1;
+    }
 
     void Update()
     {
@@ -16,11 +25,11 @@ public class Spawner : MonoBehaviour
 
             if (rand < 70)
             {
-                SpawnTemplate(_coinPrefab, _ySpawnPosition + 1);
+                SpawnTemplate(_coinPrefab, _xSpawnPosition, _yAirSpawnPosition);
             }
             else
             {
-                SpawnTemplate(_enemyPrefab, _ySpawnPosition);
+                SpawnTemplate(_enemyPrefab, _xSpawnPosition , _yGroundSpawnPosition);
             }
 
             _timeSpawn = _startTimeSpawn;
@@ -31,8 +40,8 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    static void SpawnTemplate(GameObject prefab, int yPosition)
+    static void SpawnTemplate(GameObject prefab, float xPosition, float yPosition)
     {
-        Instantiate(prefab, new Vector2(prefab.transform.position.x, yPosition), Quaternion.identity);
+        Instantiate(prefab, new Vector2(xPosition, yPosition), Quaternion.identity);
     }
 }
