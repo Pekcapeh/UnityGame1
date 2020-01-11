@@ -7,4 +7,12 @@ public class MoveObject : MonoBehaviour
     {
         transform.Translate(Vector2.left * Speed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Player>())
+        {
+            Destroy(gameObject);
+        }
+    }
 }

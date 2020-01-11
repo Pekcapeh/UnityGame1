@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 282141344}
   - component: {fileID: 282141343}
   - component: {fileID: 282141342}
+  - component: {fileID: 282141345}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -194,6 +195,18 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: 130}
   m_SizeDelta: {x: 200, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &282141345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282141341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7f6bd910f5c094cbc50b04c27beb7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &316765325
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6882a08166401a47a0d069855fc6520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 282141341}
+  _toggle: {fileID: 282141345}
 --- !u!1 &587695074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1323,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 496105327}
-        m_MethodName: ShowCreator
+        m_MethodName: TogglePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

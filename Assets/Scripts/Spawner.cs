@@ -5,7 +5,7 @@ public class Spawner : MonoBehaviour
     public GameObject EnemyPrefab;
     public GameObject CoinPrefab;
 
-    private float _startTimeSpawn = 0.7f;
+    private float _startTimeSpawn = 1f;
     private int _ySpawnPosition = -4;
     private float _timeSpawn = 0;
 
@@ -17,11 +17,11 @@ public class Spawner : MonoBehaviour
 
             if (rand < 70)
             {
-                Instantiate(CoinPrefab, new Vector2(transform.position.x, _ySpawnPosition + 1), Quaternion.identity);
+                SpawnTemplate(CoinPrefab, _ySpawnPosition + 1);
             }
             else
             {
-                Instantiate(EnemyPrefab, new Vector2(transform.position.x, _ySpawnPosition), Quaternion.identity);
+                SpawnTemplate(EnemyPrefab, _ySpawnPosition);
             }
 
             _timeSpawn = _startTimeSpawn;
@@ -30,5 +30,10 @@ public class Spawner : MonoBehaviour
         {
             _timeSpawn -= Time.deltaTime;
         }
+    }
+
+    static void SpawnTemplate(GameObject prefab, int yPosition)
+    {
+        Instantiate(prefab, new Vector2(prefab.transform.position.x, yPosition), Quaternion.identity);
     }
 }

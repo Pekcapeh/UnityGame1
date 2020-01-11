@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
         if (collision.GetComponent<Player>())
         {
             collision.GetComponent<Player>().ApplyDamage(Damage);
-            Destroy(gameObject);
         }
     }
 }

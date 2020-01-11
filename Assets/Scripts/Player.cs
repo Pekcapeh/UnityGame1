@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public TMP_Text Text;
+    [SerializeField] private TMP_Text _text;
 
     private int _health = 1;
     private float _speedRotation = 10;
@@ -45,6 +45,6 @@ public class Player : MonoBehaviour
     public void AddMoney(int money)
     {
         _money += money;
-        Text.text = _money.ToString();
+        _text.text = _money.ToString();
     }
 }
