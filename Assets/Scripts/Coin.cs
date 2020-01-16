@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin : PlayerInteracting
 {
-    private int Money = 1;
+    private int _money = 1;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void PlayerOnTriggerEnter2D(Player player)
     {
-        if (collision.GetComponent<Player>())
-        {
-            collision.GetComponent<Player>().AddMoney(Money);
-        }
-    }
+        player.AddMoney(_money);
+    }    
 }

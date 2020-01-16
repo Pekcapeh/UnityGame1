@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 282141342}
   - component: {fileID: 282141345}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelCreator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,9 +458,7 @@ GameObject:
   - component: {fileID: 496105323}
   - component: {fileID: 496105322}
   - component: {fileID: 496105321}
-  - component: {fileID: 496105326}
   - component: {fileID: 496105325}
-  - component: {fileID: 496105327}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -560,34 +558,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 496105320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca112a7c69fa5d3428441771fd3487d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 29e3a5b5284522844adeffa70ac073ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &496105326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496105320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07bb9416f4bfe54f93f0ea03b38d164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &496105327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496105320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6882a08166401a47a0d069855fc6520, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toggle: {fileID: 282141345}
+  _panelCreator: {fileID: 282141345}
 --- !u!1 &587695074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1227,7 @@ GameObject:
   - component: {fileID: 1086985640}
   - component: {fileID: 1086985639}
   m_Layer: 5
-  m_Name: Button Creater
+  m_Name: Button Show Creater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,8 +1296,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 496105327}
-        m_MethodName: TogglePanel
+      - m_Target: {fileID: 496105325}
+        m_MethodName: OnButtonAnimationPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1751,7 +1725,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 496105326}
+      - m_Target: {fileID: 496105325}
         m_MethodName: StartNewGame
         m_Mode: 1
         m_Arguments:

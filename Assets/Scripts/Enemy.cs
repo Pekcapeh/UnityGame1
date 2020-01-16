@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : PlayerInteracting
 {
-    private int Damage = 1;
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+    private int _damage = 1;
+
+    public override void PlayerOnTriggerEnter2D(Player player)
     {
-        if (collision.GetComponent<Player>())
-        {
-            collision.GetComponent<Player>().ApplyDamage(Damage);
-        }
+        player.ApplyDamage(_damage);
     }
 }

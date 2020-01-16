@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanelCreator : MonoBehaviour
+public class PanelCreatorMover : MonoBehaviour
 {
     private float _width;
     private bool _show = false;

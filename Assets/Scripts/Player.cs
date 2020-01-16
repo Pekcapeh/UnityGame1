@@ -1,21 +1,20 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-[RequireComponent(typeof(CircleCollider2D))]
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(GroundChecker))]
-
 public class Player : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
+    [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private GroundChecker _groundChecker;
 
     private int _health = 1;
     private float _speedRotation = 10;
     private float _jumpForce = 20;    
     private int _money = 0;
-    private Rigidbody2D _rigidbody;
-    private GroundChecker _groundChecker;
-
+    
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

@@ -190,9 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb03dbd94e8e0d24bbc3f7f85ae926e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {fileID: 1240510683}
-  Radius: 0.7
-  WhatIsGround:
+  _point: {fileID: 1240510683}
+  _whatIsGround:
     serializedVersion: 2
     m_Bits: 256
 --- !u!212 &29046277
@@ -272,6 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 962621383}
+  _rigidbody: {fileID: 29046274}
+  _groundChecker: {fileID: 29046276}
 --- !u!1 &384658106
 GameObject:
   m_ObjectHideFlags: 0
