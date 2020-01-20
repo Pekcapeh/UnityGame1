@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanelCreatorMover : MonoBehaviour
+[RequireComponent(typeof(RectTransform))]
+public class TogglePanel : MonoBehaviour
 {
     private float _width;
-    private bool _show = false;
+    private bool _shown = false;
 
     private void Start()
     {
@@ -14,15 +15,15 @@ public class PanelCreatorMover : MonoBehaviour
 
     public void ShowCreator()
     {
-        if (_show == false)
+        if (_shown == false)
         {
             transform.Translate(-_width, 0, 0);
-            _show = true;
+            _shown = true;
         }
         else
         {
             transform.Translate(_width, 0, 0);
-            _show = false;
+            _shown = false;
         }
     }
 }

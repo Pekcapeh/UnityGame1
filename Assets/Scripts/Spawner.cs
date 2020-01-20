@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     private float _timeSpawn = 0;
     private float _xSpawnPosition;
     private float _yAirSpawnPosition;
-    private float _yGroundSpawnPosition;    
+    private float _yGroundSpawnPosition;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
         _yAirSpawnPosition = _yGroundSpawnPosition + 1;
     }
 
-    void Update()
+    private void Update()
     {
         if (_timeSpawn <= 0)
         {
@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                SpawnTemplate(_enemyPrefab, _xSpawnPosition , _yGroundSpawnPosition);
+                SpawnTemplate(_enemyPrefab, _xSpawnPosition, _yGroundSpawnPosition);
             }
 
             _timeSpawn = _startTimeSpawn;
@@ -43,5 +43,10 @@ public class Spawner : MonoBehaviour
     static void SpawnTemplate(GameObject prefab, float xPosition, float yPosition)
     {
         Instantiate(prefab, new Vector2(xPosition, yPosition), Quaternion.identity);
+    }
+
+    public float TimerDestroy(float time, float speed)
+    {
+        return time -= speed * Time.deltaTime;
     }
 }

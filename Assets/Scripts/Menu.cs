@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private PanelCreatorMover _panelCreator;
+    [SerializeField] private TogglePanel _panelCreator;
 
     public void StartNewGame()
     {
