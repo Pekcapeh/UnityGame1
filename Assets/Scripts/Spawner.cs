@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     {
         _xSpawnPosition = GetComponent<Transform>().position.x;
         _yGroundSpawnPosition = GetComponent<Transform>().position.y;
-        _yAirSpawnPosition = _yGroundSpawnPosition + 1;
+        _yAirSpawnPosition = _yGroundSpawnPosition + 1;      
     }
 
     private void Update()
@@ -43,10 +43,5 @@ public class Spawner : MonoBehaviour
     static void SpawnTemplate(GameObject prefab, float xPosition, float yPosition)
     {
         Instantiate(prefab, new Vector2(xPosition, yPosition), Quaternion.identity);
-    }
-
-    public float TimerDestroy(float time, float speed)
-    {
-        return time -= speed * Time.deltaTime;
     }
 }
