@@ -13,7 +13,7 @@ public class TogglePanel : MonoBehaviour
         _width = GetComponent<RectTransform>().sizeDelta.x;
     }
 
-    public void ShowCreator()
+    public void Toggle()
     {
         if (_shown == false)
         {

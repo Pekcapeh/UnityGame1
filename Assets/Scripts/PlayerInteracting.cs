@@ -8,10 +8,10 @@ public abstract class PlayerInteracting : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            PlayerOnTriggerEnter2D(player);
+            OnPlayerTriggerEnter2D(player);
             Destroy(gameObject);
         }
     }
 
-    public abstract void PlayerOnTriggerEnter2D(Player player);
+    public abstract void OnPlayerTriggerEnter2D(Player player);
 }

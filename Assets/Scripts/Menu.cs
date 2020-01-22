@@ -14,7 +14,7 @@ public class Menu : MonoBehaviour
 
     public void OnButtonAnimationPanel()
     {
-        _panelCreator.ShowCreator();
+        _panelCreator.Toggle();
     }
 
     public void Quit()
